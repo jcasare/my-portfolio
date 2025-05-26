@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "./header.css";
+import React, { useState } from 'react';
+import './header.css';
 import {
   HiOutlineHome,
   HiOutlineUser,
@@ -9,32 +9,32 @@ import {
   HiOutlineMail,
   HiX,
   HiOutlineMenu,
-} from "react-icons/hi";
+} from 'react-icons/hi';
 
 const Header = () => {
-  window.addEventListener("scroll", function () {
-    const header = document.querySelector(".header");
-    if (this.scrollY >= 80) header.classList.add("scroll-header");
-    else header.classList.remove("scroll-header");
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('.header');
+    if (this.scrollY >= 80) header.classList.add('scroll-header');
+    else header.classList.remove('scroll-header');
   });
 
   const [Toggle, showMenu] = useState(false);
-  const [activeNav, setActiveNav] = useState("#home");
+  const [activeNav, setActiveNav] = useState('#home');
 
   return (
     <header className="header">
       <nav className="nav container">
         <a href="index.html" className="nav__logo">
-          iJay
+          &lt; iJay /&gt;
         </a>
-        <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
+        <div className={Toggle ? 'nav__menu show-menu' : 'nav__menu'}>
           <ul className="nav__list grid">
             <li className="nav__item">
               <a
                 href="#home"
-                onClick={() => setActiveNav("#home")}
+                onClick={() => setActiveNav('#home')}
                 className={
-                  activeNav === "#home" ? "nav__link active-link" : "nav__link"
+                  activeNav === '#home' ? 'nav__link active-link' : 'nav__link'
                 }
               >
                 <HiOutlineHome className="nav__icon" />
@@ -44,9 +44,9 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#about"
-                onClick={() => setActiveNav("#about")}
+                onClick={() => setActiveNav('#about')}
                 className={
-                  activeNav === "#about" ? "nav__link active-link" : "nav__link"
+                  activeNav === '#about' ? 'nav__link active-link' : 'nav__link'
                 }
               >
                 <HiOutlineUser className="nav__icon" />
@@ -56,11 +56,11 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#skills"
-                onClick={() => setActiveNav("#skills")}
+                onClick={() => setActiveNav('#skills')}
                 className={
-                  activeNav === "#skills"
-                    ? "nav__link active-link"
-                    : "nav__link"
+                  activeNav === '#skills'
+                    ? 'nav__link active-link'
+                    : 'nav__link'
                 }
               >
                 <HiOutlineBadgeCheck className="nav__icon" />
@@ -70,11 +70,11 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#services"
-                onClick={() => setActiveNav("#services")}
+                onClick={() => setActiveNav('#services')}
                 className={
-                  activeNav === "#services"
-                    ? "nav__link active-link"
-                    : "nav__link"
+                  activeNav === '#services'
+                    ? 'nav__link active-link'
+                    : 'nav__link'
                 }
               >
                 <HiOutlineClipboardList className="nav__icon" />
@@ -84,11 +84,11 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#portfolio"
-                onClick={() => setActiveNav("#portfolio")}
+                onClick={() => setActiveNav('#portfolio')}
                 className={
-                  activeNav === "#portfolio"
-                    ? "nav__link active-link"
-                    : "nav__link"
+                  activeNav === '#portfolio'
+                    ? 'nav__link active-link'
+                    : 'nav__link'
                 }
               >
                 <HiOutlinePhotograph className="nav__icon" />
@@ -98,11 +98,11 @@ const Header = () => {
             <li className="nav__item">
               <a
                 href="#contact"
-                onClick={() => setActiveNav("#contact")}
+                onClick={() => setActiveNav('#contact')}
                 className={
-                  activeNav === "#contact"
-                    ? "nav__link active-link"
-                    : "nav__link"
+                  activeNav === '#contact'
+                    ? 'nav__link active-link'
+                    : 'nav__link'
                 }
               >
                 <HiOutlineMail className="nav__icon" />

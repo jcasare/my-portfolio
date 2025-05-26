@@ -1,5 +1,4 @@
-import React from "react";
-import { HiOutlineArrowSmRight } from "react-icons/hi";
+import { HiOutlineArrowSmRight } from 'react-icons/hi';
 
 const ProjectItems = ({ item }) => {
   return (

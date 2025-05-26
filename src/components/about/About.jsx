@@ -1,8 +1,8 @@
-import React from "react";
-import "./about.css";
-import AboutImg from "../../assets/exh_B.JPG";
-import CV from "../../assets/Asare.Jerry.Developer.pdf";
-import Info from "./Info";
+import React from 'react';
+import './about.css';
+import AboutImg from '../../assets/exh_B.JPG';
+import CV from '../../assets/jcasare.cv.pdf';
+import Info from './Info';
 
 const About = () => {
   return (

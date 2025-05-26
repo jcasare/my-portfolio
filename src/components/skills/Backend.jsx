@@ -1,5 +1,4 @@
-import React from "react";
-import { HiCheckBadge } from "react-icons/hi2";
+import { HiCheckBadge } from 'react-icons/hi2';
 
 const Backend = () => {
   return (
@@ -10,22 +9,22 @@ const Backend = () => {
           <div className="skills__data">
             <HiCheckBadge />
             <div>
-              <h3 className="skills__name">Node.js</h3>
+              <h3 className="skills__name">Laravel</h3>
               <span className="skills__level">Advanced</span>
             </div>
           </div>
           <div className="skills__data">
             <HiCheckBadge />
             <div>
-              <h3 className="skills__name">Express.js</h3>
+              <h3 className="skills__name">Express & Nest.js</h3>
               <span className="skills__level">Advanced</span>
             </div>
           </div>
           <div className="skills__data">
             <HiCheckBadge />
             <div>
-              <h3 className="skills__name">NestJS</h3>
-              <span className="skills__level">Intermediate</span>
+              <h3 className="skills__name">CI/CD</h3>
+              <span className="skills__level">Advanced</span>
             </div>
           </div>
         </div>
@@ -33,14 +32,14 @@ const Backend = () => {
           <div className="skills__data">
             <HiCheckBadge />
             <div>
-              <h3 className="skills__name">NoSQL</h3>
-              <span className="skills__level">Intermediate</span>
+              <h3 className="skills__name">Serverless</h3>
+              <span className="skills__level">Advanced</span>
             </div>
           </div>
           <div className="skills__data">
             <HiCheckBadge />
             <div>
-              <h3 className="skills__name">SQL </h3>
+              <h3 className="skills__name">SQL & NoSQL </h3>
               <span className="skills__level">Intermediate</span>
             </div>
           </div>
@@ -48,7 +47,7 @@ const Backend = () => {
             <HiCheckBadge />
             <div>
               <h3 className="skills__name">AWS</h3>
-              <span className="skills__level">Intermediate</span>
+              <span className="skills__level">Advanced</span>
             </div>
           </div>
         </div>
