@@ -1,11 +1,9 @@
-import React from 'react';
 import './about.css';
-// import AboutImg from '../../assets/exh_B.JPG';
-// import CV from '../../assets/jcasare.cv.pdf';
 import Info from './Info';
+import Image from 'next/image';
+
 const AboutImg = '/assets/exh_B.JPG';
 const CV = '/assets/jcasare.cv.pdf';
-import Image from 'next/image';
 
 const About = () => {
   return (
