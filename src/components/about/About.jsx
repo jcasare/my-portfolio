@@ -1,8 +1,11 @@
 import React from 'react';
 import './about.css';
-import AboutImg from '../../assets/exh_B.JPG';
-import CV from '../../assets/jcasare.cv.pdf';
+// import AboutImg from '../../assets/exh_B.JPG';
+// import CV from '../../assets/jcasare.cv.pdf';
 import Info from './Info';
+const AboutImg = '/assets/exh_B.JPG';
+const CV = '/assets/jcasare.cv.pdf';
+import Image from 'next/image';
 
 const About = () => {
   return (
@@ -10,7 +13,13 @@ const About = () => {
       <h2 className="section__title">About Me</h2>
       <span className="section__subtitle">A short introduction</span>
       <div className="about__container container grid">
-        <img src={AboutImg} alt="about" className="about__img" />
+        <Image
+          src={AboutImg}
+          alt="About me"
+          width={300}
+          height={300}
+          className="about__img"
+        />{' '}
         <div className="about__data">
           <Info />
           <p className="about__description">

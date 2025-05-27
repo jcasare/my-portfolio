@@ -1,6 +1,6 @@
-import React from "react";
-import "./footer.css";
-import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
+import React from 'react';
+import './footer.css';
+import { FiTwitter, FiGithub, FiLinkedin } from 'react-icons/fi';
 
 const Footer = () => {
   return (
@@ -26,7 +26,7 @@ const Footer = () => {
         </ul>
         <div className="footer__social">
           <a
-            href="https://x.com/vhybesofficial"
+            href="https://x.com/jaydotjs"
             className="home__social-icon"
             target="_blank"
             rel="noreferrer"

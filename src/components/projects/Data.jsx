@@ -1,22 +1,14 @@
-import Project1 from '../../assets/everrest.PNG';
-import Project2 from '../../assets/ICGC.PNG';
-// import Project3 from '../../assets/chatMe.jpg';
-import Project4 from '../../assets/hcowa.PNG';
-// import Project5 from '../../assets/orderBelly.png';
-import Project6 from '../../assets/myflix.PNG';
-import Project7 from '../../assets/healthpulse.PNG';
-import Project8 from '../../assets/ltepos.PNG';
 export const projectsData = [
   {
     id: 1,
-    image: Project1,
+    image: '/assets/everrest.PNG',
     title: 'EverrestGroup',
     category: 'E',
     link: 'https://everrestgroup.com',
   },
   {
     id: 2,
-    image: Project2,
+    image: '/assets/ICGC.PNG',
     title: 'ICGC Prayer Temple',
     category: 'I',
     link: 'https://teal-parrot-732312.hostingersite.com/',
@@ -30,7 +22,7 @@ export const projectsData = [
   // },
   {
     id: 4,
-    image: Project4,
+    image: '/assets/hcowa.PNG',
     title: 'Hcowaa',
     category: 'H',
     link: 'https://hcowa.com/',
@@ -44,21 +36,21 @@ export const projectsData = [
   // },
   {
     id: 6,
-    image: Project6,
+    image: '/assets/myflix.PNG',
     title: 'MyFlix',
     category: 'M',
     link: 'https://myflix-jcasare.vercel.app',
   },
   {
     id: 7,
-    image: Project7,
+    image: '/assets/healthpulse.PNG',
     title: 'Healthpulse Online',
     category: 'H',
     link: 'https://healthpulseonline.com/',
   },
   {
     id: 8,
-    image: Project8,
+    image: '/assets/ltepos.PNG',
     title: 'Lte POS',
     category: 'L',
     link: 'https://ltepos.com/',

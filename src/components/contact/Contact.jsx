@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
-import "./contact.css";
-import { HiOutlineMail, HiOutlineArrowSmRight } from "react-icons/hi";
-import emailjs from "@emailjs/browser";
+import React, { useRef } from 'react';
+import './contact.css';
+import { HiOutlineMail, HiOutlineArrowSmRight } from 'react-icons/hi';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const form = useRef();
@@ -38,7 +38,7 @@ const Contact = () => {
                 href="mailto:asarejerry16@gmail.com"
                 className="contact__button"
               >
-                Write Me{" "}
+                Write Me{' '}
                 <HiOutlineArrowSmRight className="contact__button-icon" />
               </a>
             </div>
@@ -83,7 +83,7 @@ const Contact = () => {
             <button href="#contact" className="button button--flex">
               Send Message
               <svg
-                class="button__icon"
+                className="button__icon"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
