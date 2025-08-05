@@ -90,6 +90,9 @@ export async function GET() {
       }
     }
 
+    // Handle 204 (No Content) - user is not playing anything
+    // or 200 with null item - user has paused/stopped
+
     // If nothing is currently playing, get recently played
     const recentResponse = await getRecentlyPlayed();
     

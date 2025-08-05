@@ -14,7 +14,11 @@ const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID || 'client_id';
 const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET || 'client_secret';
 const REDIRECT_URI = 'http://127.0.0.1:3000/callback';
 
-const scopes = ['user-read-currently-playing', 'user-read-playback-state'];
+const scopes = [
+  'user-read-currently-playing', 
+  'user-read-playback-state',
+  'user-read-recently-played'
+];
 
 console.log('Spotify Authentication Setup\n');
 console.log('1. First, update CLIENT_ID and CLIENT_SECRET in this file\n');

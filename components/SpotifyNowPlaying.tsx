@@ -17,6 +17,7 @@ export default function SpotifyNowPlaying() {
   const [isMobile, setIsMobile] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -29,10 +30,24 @@ export default function SpotifyNowPlaying() {
         setIsExpanded(true);
       }
     };
+
+    const checkTheme = () => {
+      setIsDarkTheme(document.body.classList.contains('dark-theme'));
+    };
     
     checkMobile();
+    checkTheme();
+    
+    // Watch for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    
     window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      observer.disconnect();
+    };
   }, []);
 
   // Calculate initial position and bounds
@@ -90,18 +105,18 @@ export default function SpotifyNowPlaying() {
   };
 
   const expandedStyles = {
-    background: 'rgba(18, 18, 18, 0.95)',
+    background: isDarkTheme ? 'rgba(18, 18, 18, 0.95)' : 'rgba(255, 255, 255, 0.95)',
     backdropFilter: 'blur(10px)',
     borderRadius: '12px',
     padding: '16px',
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
-    border: '1px solid rgba(255, 255, 255, 0.1)',
+    boxShadow: isDarkTheme ? '0 8px 32px rgba(0, 0, 0, 0.3)' : '0 8px 32px rgba(0, 0, 0, 0.1)',
+    border: isDarkTheme ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(0, 0, 0, 0.1)',
     minWidth: '300px',
     maxWidth: '350px',
   };
 
   const minimizedStyles = {
-    background: 'rgba(18, 18, 18, 0.95)',
+    background: isDarkTheme ? 'rgba(18, 18, 18, 0.95)' : 'rgba(255, 255, 255, 0.95)',
     backdropFilter: 'blur(10px)',
     borderRadius: '50%',
     width: '56px',
@@ -110,8 +125,8 @@ export default function SpotifyNowPlaying() {
     alignItems: 'center',
     justifyContent: 'center',
     cursor: 'pointer',
-    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
-    border: '1px solid rgba(255, 255, 255, 0.1)',
+    boxShadow: isDarkTheme ? '0 4px 20px rgba(0, 0, 0, 0.3)' : '0 4px 20px rgba(0, 0, 0, 0.1)',
+    border: isDarkTheme ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(0, 0, 0, 0.1)',
   };
 
   if (error) return null;
@@ -130,7 +145,7 @@ export default function SpotifyNowPlaying() {
               <svg width="20" height="20" viewBox="0 0 24 24" fill="#1DB954">
                 <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
               </svg>
-              <span style={{ color: '#b3b3b3', fontSize: '12px', fontWeight: 600, letterSpacing: '0.5px' }}>
+              <span style={{ color: isDarkTheme ? '#b3b3b3' : '#666', fontSize: '12px', fontWeight: 600, letterSpacing: '0.5px' }}>
                 {data?.isPlaying ? 'NOW PLAYING' : data?.recentlyPlayed ? 'RECENTLY PLAYED' : 'SPOTIFY'}
               </span>
             </div>
@@ -139,15 +154,15 @@ export default function SpotifyNowPlaying() {
               style={{
                 background: 'none',
                 border: 'none',
-                color: '#b3b3b3',
+                color: isDarkTheme ? '#b3b3b3' : '#666',
                 cursor: 'pointer',
                 padding: '4px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
               }}
-              onMouseOver={(e) => e.currentTarget.style.color = '#fff'}
-              onMouseOut={(e) => e.currentTarget.style.color = '#b3b3b3'}
+              onMouseOver={(e) => e.currentTarget.style.color = isDarkTheme ? '#fff' : '#333'}
+              onMouseOut={(e) => e.currentTarget.style.color = isDarkTheme ? '#b3b3b3' : '#666'}
             >
               <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -177,7 +192,7 @@ export default function SpotifyNowPlaying() {
                 )}
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{
-                    color: '#fff',
+                    color: isDarkTheme ? '#fff' : '#333',
                     fontSize: '14px',
                     fontWeight: 600,
                     overflow: 'hidden',
@@ -188,7 +203,7 @@ export default function SpotifyNowPlaying() {
                     {data.title}
                   </div>
                   <div style={{
-                    color: '#b3b3b3',
+                    color: isDarkTheme ? '#b3b3b3' : '#666',
                     fontSize: '13px',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
@@ -198,7 +213,7 @@ export default function SpotifyNowPlaying() {
                     {data.artist}
                   </div>
                   <div style={{
-                    color: '#737373',
+                    color: isDarkTheme ? '#737373' : '#888',
                     fontSize: '12px',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
@@ -226,7 +241,7 @@ export default function SpotifyNowPlaying() {
                 </div>
               )}
               {data?.recentlyPlayed && (
-                <div style={{ marginTop: '12px', color: '#737373', fontSize: '11px', fontStyle: 'italic' }}>
+                <div style={{ marginTop: '12px', color: isDarkTheme ? '#737373' : '#888', fontSize: '11px', fontStyle: 'italic' }}>
                   Last played
                 </div>
               )}
@@ -236,21 +251,21 @@ export default function SpotifyNowPlaying() {
               <div style={{
                 width: '64px',
                 height: '64px',
-                background: 'rgba(255, 255, 255, 0.05)',
+                background: isDarkTheme ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)',
                 borderRadius: '6px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
               }}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="#737373">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill={isDarkTheme ? '#737373' : '#999'}>
                   <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
                 </svg>
               </div>
               <div>
-                <div style={{ color: '#b3b3b3', fontSize: '14px', marginBottom: '4px' }}>
+                <div style={{ color: isDarkTheme ? '#b3b3b3' : '#666', fontSize: '14px', marginBottom: '4px' }}>
                   {data?.error ? 'Error' : 'Not playing'}
                 </div>
-                <div style={{ color: '#737373', fontSize: '12px' }}>
+                <div style={{ color: isDarkTheme ? '#737373' : '#888', fontSize: '12px' }}>
                   {data?.error || 'Play something on Spotify'}
                 </div>
               </div>
@@ -262,7 +277,7 @@ export default function SpotifyNowPlaying() {
           style={minimizedStyles}
           onClick={() => setIsExpanded(true)}
         >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="#1DB954">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill={isDarkTheme ? "#1DB954" : "#1ed760"}>
             <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
           </svg>
           {data?.isPlaying && (
