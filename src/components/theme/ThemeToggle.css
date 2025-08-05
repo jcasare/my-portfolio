@@ -18,34 +18,6 @@
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
 }
 
-.theme-toggle:hover::after {
-  content: attr(aria-label);
-  position: absolute;
-  bottom: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 12px;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  animation: tooltipFadeIn 0.3s ease forwards;
-  z-index: 1000;
-}
-
-@keyframes tooltipFadeIn {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-}
 
 .theme-toggle:active {
   transform: scale(0.95);
