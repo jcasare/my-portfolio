@@ -10,10 +10,16 @@ import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 import ScrollUp from './components/scrollup/ScrollUp';
 import Portfolio from './components/projects/Portfolio';
+import AnimatedBackground from './components/background/AnimatedBackground';
+import Loader from './components/loader/Loader';
+import ThemeToggle from './components/theme/ThemeToggle';
 
 const App = () => {
   return (
     <>
+      <Loader />
+      <AnimatedBackground />
+      <ThemeToggle />
       <Header/>
       <main className='main'>
         <Home />

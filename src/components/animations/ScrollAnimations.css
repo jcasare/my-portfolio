@@ -1,0 +1,134 @@
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-slide-left {
+  animation-name: slideInLeft;
+}
+
+.animate-slide-right {
+  animation-name: slideInRight;
+}
+
+.animate-slide-up {
+  animation-name: slideInUp;
+}
+
+.animate-fade {
+  animation-name: fadeIn;
+}
+
+.animate-scale {
+  animation-name: scaleIn;
+}
+
+.section__title,
+.section__subtitle {
+  animation: slideInUp 0.8s ease forwards;
+}
+
+.home__container {
+  animation: fadeIn 1s ease forwards;
+}
+
+.about__container,
+.skills__container,
+.services__container,
+.qualification__container,
+.work__container,
+.testimonial__container,
+.contact__container {
+  animation: slideInUp 0.8s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+* {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover,
+a:hover {
+  transform: translateY(-2px);
+}
+
+.card:hover,
+.work__card:hover,
+.services__content:hover,
+.skills__content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--container-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--title-color), var(--title-color-dark));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--title-color-dark);
+}
