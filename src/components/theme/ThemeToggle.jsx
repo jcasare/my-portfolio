@@ -12,9 +12,14 @@ const ThemeToggle = () => {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
       setIsDark(true);
       document.body.classList.add('dark-theme');
+    } else {
+      setIsDark(false);
+      document.body.classList.remove('dark-theme');
     }
   }, []);
 
@@ -59,7 +64,6 @@ const ThemeToggle = () => {
       x: touch.clientX - position.x,
       y: touch.clientY - position.y,
     });
-    e.preventDefault();
   };
 
   useEffect(() => {
@@ -92,7 +96,6 @@ const ThemeToggle = () => {
       newY = Math.max(margin, Math.min(windowSize.height - buttonSize - (isMobile ? 120 : margin), newY));
 
       setPosition({ x: newX, y: newY });
-      e.preventDefault();
     };
 
     const handleEnd = () => {
