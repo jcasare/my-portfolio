@@ -1,0 +1,29 @@
+{
+  "name": "Jerry Asare - Full-Stack Developer Portfolio",
+  "short_name": "Jerry Asare",
+  "description": "Experienced Full-Stack Developer specializing in React, Next.js, Node.js, and modern web technologies.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/assets/myDp.jpg",
+      "type": "image/jpeg",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/myDp.jpg",
+      "type": "image/jpeg",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}
