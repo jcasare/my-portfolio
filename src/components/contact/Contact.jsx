@@ -1,21 +1,30 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import './contact.css';
 import { HiOutlineMail, HiOutlineArrowSmRight } from 'react-icons/hi';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const form = useRef();
+  const [status, setStatus] = useState('idle'); // idle, sending, success, error
 
   const sendEmail = async (e) => {
     e.preventDefault();
+    setStatus('sending');
 
-    await emailjs.sendForm(
-      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-      form.current,
-      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-    );
-    e.target.reset();
+    try {
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
+      setStatus('success');
+      e.target.reset();
+      setTimeout(() => setStatus('idle'), 5000);
+    } catch (error) {
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 5000);
+    }
   };
 
   return (
@@ -80,8 +89,12 @@ const Contact = () => {
               ></textarea>
             </div>
 
-            <button href="#contact" className="button button--flex">
-              Send Message
+            <button
+              type="submit"
+              className="button button--flex"
+              disabled={status === 'sending'}
+            >
+              {status === 'sending' ? 'Sending...' : 'Send Message'}
               <svg
                 className="button__icon"
                 xmlns="http://www.w3.org/2000/svg"
@@ -100,6 +113,17 @@ const Contact = () => {
                 ></path>
               </svg>
             </button>
+
+            {status === 'success' && (
+              <p className="contact__message contact__message--success">
+                Message sent successfully!
+              </p>
+            )}
+            {status === 'error' && (
+              <p className="contact__message contact__message--error">
+                Something went wrong. Please try again.
+              </p>
+            )}
           </form>
         </div>
       </div>
