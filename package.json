@@ -3,21 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emailjs/browser": "^3.10.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@emailjs/browser": "^4.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
     "emailjs-com": "^3.2.0",
-    "framer-motion": "^12.23.12",
-    "next": "^15.3.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.7.1",
+    "framer-motion": "^12.31.0",
+    "next": "^16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-icons": "^5.5.0",
     "react-scripts": "5.0.1",
     "styled-jsx": "^5.1.7",
-    "swiper": "^8.4.5",
-    "swr": "^2.3.4",
-    "web-vitals": "^2.1.4"
+    "swiper": "^12.1.0",
+    "swr": "^2.4.0",
+    "web-vitals": "^5.1.0"
   },
   "scripts": {
     "dev": "next dev --turbopack",
@@ -45,6 +45,6 @@
     ]
   },
   "devDependencies": {
-    "firebase-tools": "^11.21.0"
+    "firebase-tools": "^15.5.1"
   }
 }
