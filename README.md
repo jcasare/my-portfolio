@@ -1,36 +1,82 @@
 # Portfolio Project
 
-![Screenshot](./src/assets/home.png)
-This is a responsive portfolio site created with React and vanilla CSS that implements Swiper for sliding components and EmailJS for contact services.
+![Screenshot](./public/assets/home-img.png)
 
-### Project Features:
+A responsive portfolio site built with Next.js and vanilla CSS, featuring Swiper for sliding components and EmailJS for contact services.
+
+## Tech Stack
+
+- Next.js 16
+- React 19
+- Swiper
+- EmailJS
+- Framer Motion
+
+## Features
 
 - Responsive Layout
+- Dark/Light Theme Toggle
 - Fixed Navigation
 - Pop-up Modals
 - Tab Panels
 - Slider + Pagination
-- Contact Form
+- Contact Form with Status Feedback
 - Scroll to Top
 
-## React-Icons
+## Getting Started
 
-`npm install react-icons --save`
+```bash
+# Install dependencies
+npm install
 
-The icons from this project can be found in the _Feather_ or _Heroicon_ sections of the [React-Icons](https://react-icons.github.io/react-icons/) library.
+# Run development server
+npm run dev
 
-## Slider Component
+# Build for production
+npm run build
 
-`npm i swiper`
+# Start production server
+npm run start
+```
 
-The slider component of the testimonial section is imported from [SwiperJS](https://swiperjs.com/react) and also utilizes their pagination module.
+## Environment Variables
+
+Create a `.env.local` file in the project root:
+
+```
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+Get these values from your [EmailJS Dashboard](https://dashboard.emailjs.com/admin).
+
+## Dependencies
+
+### React Icons
+
+```bash
+npm install react-icons
+```
+
+Icons from the _Feather_ and _Heroicon_ sections of [React-Icons](https://react-icons.github.io/react-icons/).
+
+### Swiper
+
+```bash
+npm install swiper
+```
+
+Slider component from [SwiperJS](https://swiperjs.com/react) with pagination module.
 
 ![Screenshot](./src/assets/portfolio-testimonials.PNG)
 
-## Email Component
+### EmailJS
 
-`npm install @emailjs/browser --save`
+```bash
+npm install @emailjs/browser
+```
 
-The form modal of the contact section is setup using SDK and an email template from [EmailJS](https://www.emailjs.com/docs/examples/reactjs/).
+Contact form powered by [EmailJS](https://www.emailjs.com/docs/examples/reactjs/).
 
 ![Screenshot](./src/assets/emailjs.PNG)
