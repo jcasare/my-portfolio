@@ -9,9 +9,9 @@ export const projectsData = [
   {
     id: 2,
     image: '/assets/ICGC.PNG',
-    title: 'Elite EnergyRig',
-    category: 'E',
-    link: 'https://teal-parrot-732312.hostingersite.com/',
+    title: 'ICGC Prayer Temple',
+    category: 'I',
+    link: 'https://darkslategrey-wombat-363454.hostingersite.com/',
   },
   // {
   //   id: 3,
@@ -97,6 +97,13 @@ export const projectsData = [
     title: 'Roma Resources',
     category: 'R',
     link: 'https://romaresources.org/',
+  },
+  {
+    id: 15,
+    image: '/assets/elite-energy.png',
+    title: 'Elite EnergyRig',
+    category: 'E',
+    link: 'https://eliteenergyrig.com/',
   },
 ];
 
