@@ -53,7 +53,7 @@ const Data = () => {
           ></path>
         </svg>
       </h1>
-      <h3 className="home__subtitle">Full Stack Software Engineer</h3>
+      <h3 className="home__subtitle">Senior Full Stack Software Engineer</h3>
       <p className="home__description">
         Skilled full stack engineer adept at building robust web applications.
         Passionate about integrating elegant design with seamless functionality.

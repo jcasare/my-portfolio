@@ -22,7 +22,7 @@ const Header = () => {
       else header.classList.remove('scroll-header');
 
       // Detect active section based on scroll position
-      const sections = ['home', 'about', 'skills', 'services', 'portfolio', 'contact'];
+      const sections = ['home', 'about', 'techstack', 'services', 'portfolio', 'contact'];
       const scrollPosition = window.scrollY + 100; // Offset for header height
 
       for (const sectionId of sections) {
@@ -85,13 +85,13 @@ const Header = () => {
             </li>
             <li className="nav__item">
               <a
-                href="#skills"
+                href="#techstack"
                 onClick={(e) => {
-                  setActiveNav('#skills');
+                  setActiveNav('#techstack');
                   showMenu(false);
                 }}
                 className={
-                  activeNav === '#skills'
+                  activeNav === '#techstack'
                     ? 'nav__link active-link'
                     : 'nav__link'
                 }

@@ -127,12 +127,12 @@ const Qualification = () => {
             <div className="qualification__data">
               <div>
                 <h3 className="qualification__title">
-                  Retail Advisor & Tech Support
+                  Software Developer
                 </h3>
-                <span className="qualification__subtitle">Telecel Ghana</span>
+                <span className="qualification__subtitle">Freelance</span>
                 <div className="qualification__calendar">
                   <HiOutlineCalendar className="qualification__calendar-icon" />
-                  2020 - 2022
+                  2021 - Present
                 </div>
               </div>
               <div>
@@ -147,11 +147,11 @@ const Qualification = () => {
                 <span className="qualification__line"></span>
               </div>
               <div>
-                <h3 className="qualification__title">Software Developer</h3>
-                <span className="qualification__subtitle">Freelance</span>
+                <h3 className="qualification__title">IT Manager</h3>
+                <span className="qualification__subtitle">Kosans Royal</span>
                 <div className="qualification__calendar">
                   <HiOutlineCalendar className="qualification__calendar-icon" />
-                  2021 - Present
+                  2021 - 2023
                 </div>
               </div>
             </div>
@@ -159,7 +159,7 @@ const Qualification = () => {
               <div>
                 <h3 className="qualification__title">Web Developer</h3>
                 <span className="qualification__subtitle">
-                  WebSys Ghana - Remote
+                  WebSys Technology - Remote
                 </span>
                 <div className="qualification__calendar">
                   <HiOutlineCalendar className="qualification__calendar-icon" />
@@ -184,8 +184,24 @@ const Qualification = () => {
                 </span>
                 <div className="qualification__calendar">
                   <HiOutlineCalendar className="qualification__calendar-icon" />
-                  2023 - Present
+                  2023 - 2025
                 </div>
+              </div>
+            </div>
+            <div className="qualification__data">
+              <div>
+                <h3 className="qualification__title">Senior Software Engineer</h3>
+                <span className="qualification__subtitle">
+                  Fjorge - Remote
+                </span>
+                <div className="qualification__calendar">
+                  <HiOutlineCalendar className="qualification__calendar-icon" />
+                  2025 - Present
+                </div>
+              </div>
+              <div>
+                <span className="qualification__rounder"></span>
+                <span className="qualification__line"></span>
               </div>
             </div>
           </div>
