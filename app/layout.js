@@ -1,22 +1,22 @@
 import SpotifyNowPlaying from '../components/SpotifyNowPlaying';
 
 export const metadata = {
-  title: 'Jerry Asare | Full-Stack Developer & Software Engineer',
-  description: 'Experienced Full-Stack Developer specializing in React, Next.js, Node.js, and modern web technologies. Building innovative digital solutions with clean code and exceptional user experiences.',
-  keywords: 'Jerry Asare, Full-Stack Developer, Software Engineer, React Developer, Next.js, Node.js, Web Developer, Portfolio',
+  title: 'Jerry Asare | Senior Full Stack Software Engineer',
+  description: 'Senior Full Stack Software Engineer building robust web applications with React, Next.js, and Node.js. Passionate about minimal design, seamless functionality, and user-centric solutions.',
+  keywords: 'Jerry Asare, Senior Full Stack Engineer, Software Engineer, React, Next.js, Node.js, Web Developer, Portfolio',
   authors: [{ name: 'Jerry Asare' }],
   creator: 'Jerry Asare',
   openGraph: {
-    title: 'Jerry Asare | Full-Stack Developer & Software Engineer',
-    description: 'Experienced Full-Stack Developer specializing in React, Next.js, Node.js, and modern web technologies. View my portfolio and projects.',
-    url: 'https://your-domain.com',
-    siteName: 'Jerry Asare Portfolio',
+    title: 'Jerry Asare | Senior Full Stack Software Engineer',
+    description: 'Senior Full Stack Software Engineer crafting applications with minimal design and user-friendly experiences. View my portfolio and projects.',
+    url: 'https://www.jerryasare.com',
+    siteName: 'Jerry Asare',
     images: [
       {
         url: '/assets/myDp.jpg',
         width: 1200,
         height: 630,
-        alt: 'Jerry Asare - Full-Stack Developer',
+        alt: 'Jerry Asare - Senior Full Stack Software Engineer',
       }
     ],
     locale: 'en_US',
@@ -24,8 +24,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jerry Asare | Full-Stack Developer & Software Engineer',
-    description: 'Experienced Full-Stack Developer specializing in React, Next.js, and modern web technologies.',
+    title: 'Jerry Asare | Senior Full Stack Software Engineer',
+    description: 'Senior Full Stack Software Engineer crafting applications with minimal design and user-friendly experiences.',
     images: ['/assets/myDp.jpg'],
     creator: '@iJAY',
   },
@@ -40,11 +40,9 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code',
-  },
+  metadataBase: new URL('https://www.jerryasare.com'),
   alternates: {
-    canonical: 'https://your-domain.com',
+    canonical: 'https://www.jerryasare.com',
   },
 };
 
