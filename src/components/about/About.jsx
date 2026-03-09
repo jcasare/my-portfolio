@@ -3,7 +3,7 @@ import Info from './Info';
 import Image from 'next/image';
 
 const AboutImg = '/assets/exh_B.JPG';
-const CV = '/assets/jcasare.cv.pdf';
+const CV = '/assets/jcasare-cv.pdf';
 
 const About = () => {
   return (
