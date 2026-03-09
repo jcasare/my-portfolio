@@ -40,6 +40,9 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    google: 'veKmb9c2uT-h8MTqbG7aj04Eqjvucdu99rb7lZcdSS8',
+  },
   metadataBase: new URL('https://www.jerryasare.com'),
   alternates: {
     canonical: 'https://www.jerryasare.com',
